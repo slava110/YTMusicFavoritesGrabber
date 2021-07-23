@@ -1,0 +1,26 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+    id 'org.jetbrains.kotlin.jvm' version '1.5.21'
+}
+
+group 'com.slava_110.ytmusicfavgrabber'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    implementation "com.google.api-client:google-api-client:1.32.1"
+    implementation "com.google.apis:google-api-services-youtube:v3-rev222-1.25.0"
+    implementation "com.google.oauth-client:google-oauth-client-java6:1.31.5"
+    implementation "com.google.oauth-client:google-oauth-client-jetty:1.31.5"
+}
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': 'com.slava_110.ytmusicfavgrabber.MainKt'
+    }
+}
